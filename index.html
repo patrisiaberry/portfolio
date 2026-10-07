@@ -1,0 +1,1046 @@
+<!DOCTYPE html>
+<html lang="es" class="dark scroll-smooth overflow-x-hidden">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patricia Paños | Brand Building, Growth & AI Marketing</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        cyber: {
+                            black: '#060812',
+                            card: 'rgba(15, 21, 38, 0.8)',
+                            purple: '#a855f7',
+                            deepPurple: '#9333ea',
+                            cyan: '#06b6d4',
+                            pink: '#ec4899',
+                            indigo: '#6366f1'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #050711;
+            color: #f3f4f6;
+        }
+
+        /* Ambient Glows intensificados hacia el morado */
+        .ambient-glow-1 {
+            position: absolute;
+            top: -5%;
+            left: -10%;
+            width: 70vw;
+            max-width: 650px;
+            height: 70vw;
+            max-height: 650px;
+            background: radial-gradient(circle, rgba(168, 85, 247, 0.22) 0%, rgba(0,0,0,0) 70%);
+            border-radius: 50%;
+            filter: blur(90px);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .ambient-glow-2 {
+            position: absolute;
+            top: 35%;
+            right: -10%;
+            width: 70vw;
+            max-width: 550px;
+            height: 70vw;
+            max-height: 550px;
+            background: radial-gradient(circle, rgba(147, 51, 234, 0.18) 0%, rgba(0,0,0,0) 70%);
+            border-radius: 50%;
+            filter: blur(90px);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .ambient-glow-3 {
+            position: absolute;
+            bottom: 5%;
+            left: 5%;
+            width: 60vw;
+            max-width: 500px;
+            height: 60vw;
+            max-height: 500px;
+            background: radial-gradient(circle, rgba(168, 85, 247, 0.18) 0%, rgba(0,0,0,0) 70%);
+            border-radius: 50%;
+            filter: blur(90px);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .glass-panel {
+            background: rgba(15, 21, 38, 0.8);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(168, 85, 247, 0.15);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.45);
+        }
+
+        .glass-panel-hover {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .glass-panel-hover:hover {
+            background: rgba(26, 30, 58, 0.9);
+            border-color: rgba(168, 85, 247, 0.5);
+            box-shadow: 0 10px 30px -10px rgba(168, 85, 247, 0.4);
+            transform: translateY(-2px);
+        }
+
+        .text-glow-purple {
+            text-shadow: 0 0 25px rgba(168, 85, 247, 0.55);
+        }
+
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #050711;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #1e293b;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #a855f7;
+        }
+
+        .typing-cursor::after {
+            content: '|';
+            animation: blink 0.8s infinite;
+        }
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
+
+        .bg-grid-pattern {
+            background-size: 30px 30px;
+            background-image: 
+                linear-gradient(to right, rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
+        }
+
+        @keyframes pulseGlow {
+            0%, 100% { box-shadow: 0 0 12px rgba(168, 85, 247, 0.4); }
+            50% { box-shadow: 0 0 24px rgba(168, 85, 247, 0.8); }
+        }
+        .status-badge-glow {
+            animation: pulseGlow 2.5s infinite;
+        }
+    </style>
+</head>
+<body class="relative min-h-screen text-slate-100 bg-grid-pattern selection:bg-purple-600 selection:text-white overflow-x-hidden">
+
+    <div class="ambient-glow-1"></div>
+    <div class="ambient-glow-2"></div>
+    <div class="ambient-glow-3"></div>
+
+    <!-- HEADER / NAV -->
+    <header class="sticky top-0 z-50 w-full px-3 sm:px-8 py-3 sm:py-4 transition-all duration-300">
+        <div class="max-w-7xl mx-auto glass-panel rounded-2xl px-4 sm:px-6 py-3 flex items-center justify-between">
+            <a href="#" class="flex items-center gap-3 group">
+                <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-gradient-to-tr from-purple-700 via-purple-500 to-indigo-400 flex items-center justify-center font-black text-lg sm:text-xl text-white shadow-lg shadow-purple-600/40 group-hover:scale-105 transition-transform">
+                    PP
+                </div>
+                <span class="font-bold text-base sm:text-lg tracking-wider bg-clip-text text-transparent bg-gradient-to-r from-white via-purple-100 to-purple-300">
+                    PATRICIA<span class="text-purple-400">.PAÑOS</span>
+                </span>
+            </a>
+
+            <!-- Navigation Desktop -->
+            <nav class="hidden md:flex items-center space-x-1 text-sm font-medium">
+                <a href="#about" class="px-3 py-2 rounded-lg text-slate-300 hover:text-white hover:bg-purple-950/40 transition-colors">Sobre Mí</a>
+                <a href="#press" class="px-3 py-2 rounded-lg text-slate-300 hover:text-white hover:bg-purple-950/40 transition-colors">Prensa</a>
+                <a href="#experience" class="px-3 py-2 rounded-lg text-slate-300 hover:text-white hover:bg-purple-950/40 transition-colors">Experiencia</a>
+                <a href="#skills" class="px-3 py-2 rounded-lg text-slate-300 hover:text-white hover:bg-purple-950/40 transition-colors">Skills & AI</a>
+                <a href="#education" class="px-3 py-2 rounded-lg text-slate-300 hover:text-white hover:bg-purple-950/40 transition-colors">Formación</a>
+                <a href="#contact" class="px-3 py-2 rounded-lg text-slate-300 hover:text-white hover:bg-purple-950/40 transition-colors">Contacto</a>
+            </nav>
+
+            <div class="hidden sm:flex items-center gap-3">
+                <!-- Selector de Idioma Desktop -->
+                <div class="flex items-center bg-slate-900/80 p-1 rounded-xl border border-purple-500/30 text-xs font-semibold">
+                    <span class="px-2.5 py-1 rounded-lg bg-purple-600 text-white shadow-sm">ES</span>
+                    <a href="indexeng.html" class="px-2.5 py-1 rounded-lg text-slate-400 hover:text-white transition-colors">EN</a>
+                </div>
+
+                <a href="#contact" class="px-4 sm:px-5 py-2 sm:py-2.5 rounded-xl text-xs sm:text-sm font-semibold text-white bg-gradient-to-r from-purple-700 via-purple-600 to-indigo-600 hover:opacity-90 shadow-lg shadow-purple-600/30 hover:shadow-purple-600/50 hover:-translate-y-0.5 transition-all">
+                    Contactar
+                </a>
+            </div>
+
+            <div class="flex items-center gap-2 sm:hidden">
+                <div class="flex items-center bg-slate-900/80 p-0.5 rounded-lg border border-purple-500/30 text-[11px] font-semibold">
+                    <span class="px-2 py-0.5 rounded bg-purple-600 text-white">ES</span>
+                    <a href="indexeng.html" class="px-2 py-0.5 rounded text-slate-400">EN</a>
+                </div>
+
+                <button id="mobileMenuBtn" aria-label="Abrir Menú" class="text-slate-300 hover:text-white focus:outline-none p-2 rounded-lg hover:bg-purple-950/40">
+                    <i class="fa-solid fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobileMenu" class="hidden md:hidden max-w-7xl mx-auto mt-2 glass-panel rounded-2xl p-5 transition-all duration-300">
+            <nav class="flex flex-col space-y-2 font-medium text-sm">
+                <a href="#about" class="mobile-link py-2.5 px-4 rounded-lg text-slate-200 hover:bg-purple-900/30">Sobre Mí</a>
+                <a href="#press" class="mobile-link py-2.5 px-4 rounded-lg text-slate-200 hover:bg-purple-900/30">Prensa</a>
+                <a href="#experience" class="mobile-link py-2.5 px-4 rounded-lg text-slate-200 hover:bg-purple-900/30">Experiencia</a>
+                <a href="#skills" class="mobile-link py-2.5 px-4 rounded-lg text-slate-200 hover:bg-purple-900/30">Skills & AI</a>
+                <a href="#education" class="mobile-link py-2.5 px-4 rounded-lg text-slate-200 hover:bg-purple-900/30">Formación</a>
+                <a href="#contact" class="mobile-link py-2.5 px-4 rounded-lg text-slate-200 hover:bg-purple-900/30">Contacto</a>
+                
+                <div class="pt-2 flex items-center justify-between border-t border-purple-900/40">
+                    <span class="text-xs text-slate-400">Idioma / Language</span>
+                    <div class="flex items-center bg-slate-900 p-1 rounded-xl border border-purple-500/30 text-xs font-semibold">
+                        <span class="px-3 py-1 rounded-lg bg-purple-600 text-white">Español</span>
+                        <a href="indexeng.html" class="px-3 py-1 rounded-lg text-slate-400">English</a>
+                    </div>
+                </div>
+
+                <a href="#contact" class="mobile-link mt-2 text-center py-3 rounded-xl font-semibold text-white bg-gradient-to-r from-purple-700 to-indigo-600">
+                    Contactar
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section id="about" class="relative pt-6 sm:pt-12 pb-16 sm:pb-24 px-4 sm:px-6 max-w-7xl mx-auto z-10">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+            
+            <div class="lg:col-span-7 space-y-5 sm:space-y-6 text-center lg:text-left">
+                
+                <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full glass-panel border border-purple-500/40 text-purple-300 text-xs font-medium status-badge-glow">
+                    <span class="w-2 h-2 rounded-full bg-purple-400 animate-ping"></span>
+                    <span class="w-2 h-2 rounded-full bg-purple-500 -ml-4"></span>
+                    <span>España</span>
+                </div>
+
+                <h1 class="text-3xl sm:text-5xl lg:text-6xl xl:text-7xl font-extrabold tracking-tight leading-tight">
+                    Patricia <br class="hidden sm:inline">
+                    <span class="bg-clip-text text-transparent bg-gradient-to-r from-purple-400 via-purple-300 to-indigo-300 text-glow-purple">
+                        Paños
+                    </span>
+                </h1>
+
+                <div class="text-base sm:text-xl lg:text-2xl text-slate-300 font-medium min-h-[3rem] flex items-center justify-center lg:justify-start flex-wrap">
+                    <span>Especialista en&nbsp;</span>
+                    <span id="typing-text" class="text-purple-400 font-semibold border-b-2 border-purple-500 typing-cursor inline-block min-w-[2px]"></span>
+                </div>
+
+                <p class="text-slate-400 text-sm sm:text-base lg:text-lg max-w-2xl mx-auto lg:mx-0 leading-relaxed">
+                    <strong class="text-slate-200">Marketing & Brand Builder — 0 to 1 & 1 to scale.</strong> Construyo marcas y sistemas de marketing desde cero y los escalo con datos, incorporando herramientas de IA en analítica y reporte. Más de 6 años liderando equipos internacionales en España, México y LATAM.
+                </p>
+
+                <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3 sm:gap-4 pt-2">
+                    <a href="#experience" class="w-full sm:w-auto px-6 py-3.5 rounded-xl font-bold text-sm text-white bg-gradient-to-r from-purple-700 via-purple-600 to-indigo-600 shadow-xl shadow-purple-600/30 hover:shadow-purple-600/50 hover:scale-102 transition-all flex items-center justify-center gap-2">
+                        Ver Trayectoria <i class="fa-solid fa-arrow-right text-xs"></i>
+                    </a>
+                    
+                    <button onclick="copyContactInfo()" class="w-full sm:w-auto px-6 py-3.5 rounded-xl font-bold text-sm text-slate-200 glass-panel hover:bg-purple-950/50 hover:border-purple-500/60 hover:text-white transition-all flex items-center justify-center gap-2">
+                        <i class="fa-regular fa-copy text-purple-400"></i> Copiar Datos de Contacto
+                    </button>
+                </div>
+
+                <div class="flex flex-wrap items-center justify-center lg:justify-start gap-4 pt-3 text-xs text-slate-400">
+                    <a href="mailto:patricia.panyos@gmail.com" class="hover:text-purple-400 flex items-center gap-2 transition-colors">
+                        <i class="fa-solid fa-envelope text-purple-400"></i> patricia.panyos@gmail.com
+                    </a>
+                    <a href="tel:+34648774293" class="hover:text-purple-300 flex items-center gap-2 transition-colors">
+                        <i class="fa-solid fa-phone text-purple-400"></i> (+34) 648 774 293
+                    </a>
+                </div>
+
+            </div>
+
+            <!-- Profile Image Container -->
+            <div class="lg:col-span-5 flex justify-center relative mt-4 lg:mt-0">
+                <div class="absolute inset-0 bg-gradient-to-tr from-purple-700 via-purple-500 to-indigo-500 rounded-full blur-3xl opacity-30"></div>
+
+                <div class="relative w-56 h-56 sm:w-72 sm:h-72 md:w-80 md:h-80">
+                    <div class="absolute inset-0 bg-gradient-to-tr from-purple-700 via-purple-500 to-indigo-500 rounded-full blur-3xl opacity-30"></div>
+
+                    <!-- CARRUSEL DE FOTOS -->
+                    <div class="absolute inset-0 rounded-3xl bg-gradient-to-tr from-purple-600 via-purple-400 to-indigo-500 p-1 shadow-2xl">
+                        <div class="w-full h-full bg-slate-950 rounded-[22px] overflow-hidden relative group">
+                            <div id="heroCarousel" class="w-full h-full relative">
+                                <img src="foto1.jpg" alt="Patricia Paños — Marketing y Brand Building" class="hero-slide absolute inset-0 w-full h-full object-cover object-center opacity-100 transition-opacity duration-700" data-slide="0">
+                                <img src="foto2.jpg" alt="Patricia Paños — Consultoría y startups" class="hero-slide absolute inset-0 w-full h-full object-cover object-center opacity-0 transition-opacity duration-700" data-slide="1">
+                                <img src="foto3.jpg" alt="Patricia Paños — Mercados internacionales" class="hero-slide absolute inset-0 w-full h-full object-cover object-center opacity-0 transition-opacity duration-700" data-slide="2">
+                                <img src="foto4.jpg" alt="Patricia Paños — Liderazgo de equipos" class="hero-slide absolute inset-0 w-full h-full object-cover object-center opacity-0 transition-opacity duration-700" data-slide="3">
+
+                                <div class="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-slate-950/75 to-transparent pointer-events-none"></div>
+
+                                <button type="button" id="heroPrev" aria-label="Foto anterior" class="absolute left-2 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-slate-950/60 text-white backdrop-blur-sm flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity hover:bg-purple-700/80">
+                                    <i class="fa-solid fa-chevron-left text-xs"></i>
+                                </button>
+                                <button type="button" id="heroNext" aria-label="Foto siguiente" class="absolute right-2 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-slate-950/60 text-white backdrop-blur-sm flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity hover:bg-purple-700/80">
+                                    <i class="fa-solid fa-chevron-right text-xs"></i>
+                                </button>
+
+                                <div class="absolute bottom-3 left-0 right-0 flex justify-center gap-1.5" aria-label="Seleccionar foto">
+                                    <button type="button" class="hero-dot w-2 h-2 rounded-full bg-white transition-all" data-slide="0" aria-label="Foto 1"></button>
+                                    <button type="button" class="hero-dot w-2 h-2 rounded-full bg-white/40 transition-all" data-slide="1" aria-label="Foto 2"></button>
+                                    <button type="button" class="hero-dot w-2 h-2 rounded-full bg-white/40 transition-all" data-slide="2" aria-label="Foto 3"></button>
+                                    <button type="button" class="hero-dot w-2 h-2 rounded-full bg-white/40 transition-all" data-slide="3" aria-label="Foto 4"></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- MENSAJES DE POSICIONAMIENTO -->
+                    <div class="hidden sm:flex absolute -top-4 -left-12 glass-panel p-3 rounded-2xl items-center gap-3 shadow-2xl border border-purple-500/50">
+                        <div class="w-9 h-9 rounded-xl bg-purple-500/20 text-purple-300 flex items-center justify-center text-sm">
+                            <i class="fa-solid fa-lightbulb"></i>
+                        </div>
+                        <div>
+                            <p class="text-[10px] text-slate-400">Experiencia</p>
+                            <p class="text-xs font-bold text-white">Consultoría & Startups</p>
+                        </div>
+                    </div>
+
+                    <div class="hidden sm:flex absolute top-1/2 -right-16 -translate-y-1/2 glass-panel p-3 rounded-2xl items-center gap-3 shadow-2xl border border-purple-400/50">
+                        <div class="w-9 h-9 rounded-xl bg-purple-500/20 text-purple-300 flex items-center justify-center text-sm">
+                            <i class="fa-solid fa-globe"></i>
+                        </div>
+                        <div>
+                            <p class="text-[10px] text-slate-400">Experiencia</p>
+                            <p class="text-xs font-bold text-white">Mercados Internacionales</p>
+                        </div>
+                    </div>
+
+                    <div class="hidden sm:flex absolute -bottom-4 -left-8 glass-panel p-3 rounded-2xl items-center gap-3 shadow-2xl border border-purple-400/50">
+                        <div class="w-9 h-9 rounded-xl bg-purple-500/20 text-purple-300 flex items-center justify-center text-sm">
+                            <i class="fa-solid fa-users"></i>
+                        </div>
+                        <div>
+                            <p class="text-[10px] text-slate-400">Liderazgo</p>
+                            <p class="text-xs font-bold text-white">Equipos Multidisciplinares</p>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- METRICS SECTION -->
+    <section class="py-6 sm:py-8 px-4 max-w-7xl mx-auto relative z-10">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-6">
+            <div class="glass-panel glass-panel-hover p-4 sm:p-6 rounded-2xl text-center border-purple-500/30">
+                <div class="text-2xl sm:text-4xl font-black bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-purple-200 font-mono tracking-tight">+20%</div>
+                <p class="text-[11px] sm:text-xs text-slate-400 mt-1 sm:mt-2 font-medium">Crecimiento MQL-to-SQL YoY</p>
+            </div>
+            <div class="glass-panel glass-panel-hover p-4 sm:p-6 rounded-2xl text-center border-purple-500/30">
+                <div class="text-2xl sm:text-4xl font-black bg-clip-text text-transparent bg-gradient-to-r from-purple-300 to-indigo-300 font-mono tracking-tight">~€1M</div>
+                <p class="text-[11px] sm:text-xs text-slate-400 mt-1 sm:mt-2 font-medium">Ronda Inversión (Co-Founder)</p>
+            </div>
+            <div class="glass-panel glass-panel-hover p-4 sm:p-6 rounded-2xl text-center border-purple-500/30">
+                <div class="text-2xl sm:text-4xl font-black bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-cyan-300 font-mono tracking-tight">+6</div>
+                <p class="text-[11px] sm:text-xs text-slate-400 mt-1 sm:mt-2 font-medium">Años Liderando Equipos</p>
+            </div>
+            <div class="glass-panel glass-panel-hover p-4 sm:p-6 rounded-2xl text-center border-purple-500/30">
+                <div class="text-2xl sm:text-4xl font-black bg-clip-text text-transparent bg-gradient-to-r from-purple-300 to-pink-300 font-mono tracking-tight">1.5M+</div>
+                <p class="text-[11px] sm:text-xs text-slate-400 mt-1 sm:mt-2 font-medium">Seguidores en LinkedIn</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN: MEDIOS DE COMUNICACIÓN Y PRENSA (GRID 2x2) -->
+    <section id="press" class="py-12 sm:py-20 px-4 sm:px-6 max-w-7xl mx-auto relative z-10">
+        <div class="glass-panel p-6 sm:p-12 rounded-3xl border border-purple-500/30 bg-slate-950/60">
+            <div class="text-center max-w-3xl mx-auto mb-10 sm:mb-14">
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-purple-500/20 border border-purple-500/40 text-purple-300 text-xs font-semibold mb-3">
+                    <i class="fa-solid fa-newspaper"></i> Medios de Comunicación
+                </div>
+                <h2 class="text-2xl sm:text-4xl font-extrabold text-white tracking-tight">Apariciones en Prensa & Entrevistas</h2>
+                <p class="text-slate-400 mt-2 text-sm sm:text-base">Menciones, artículos y entrevistas sobre innovación tecnológica, marketing y estrategia.</p>
+            </div>
+
+            <!-- Retícula 2x2 para las 4 noticias -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                
+                <!-- Noticia 1 (Interdiario - Con enlace exacto) -->
+                <article class="glass-panel glass-panel-hover p-6 rounded-2xl border border-purple-500/40 flex flex-col justify-between group">
+                    <div>
+                        <div class="flex items-center justify-between gap-2 mb-3">
+                            <span class="px-2.5 py-1 rounded-lg text-xs font-bold bg-purple-600/30 text-purple-300 border border-purple-500/40 uppercase tracking-wider">
+                                Interdiario
+                            </span>
+                            <time class="text-xs text-slate-400 font-medium">15 Mar 2023</time>
+                        </div>
+                        <h3 class="text-base sm:text-lg font-bold text-white group-hover:text-purple-300 transition-colors leading-snug mb-4">
+                            Patricia Paños, CMO Oratrex: “Nuestra tecnología garantiza un proceso de compra de entradas segura”
+                        </h3>
+                    </div>
+                    <div class="pt-2 border-t border-purple-900/40 flex items-center justify-between">
+                        <span class="text-xs text-slate-400">Entrevista Exclusiva</span>
+                        <a href="https://interdiario.es/2023/03/15/patricia-panos-cmo-oratrex-nuestra-tecnologia-garantiza-un-proceso-de-compra-de-entradas-segura/" target="_blank" rel="noopener noreferrer" class="text-xs font-bold text-purple-400 hover:text-purple-300 flex items-center gap-1.5 transition-colors">
+                            Leer artículo completo <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Noticia 2 (Reserva) -->
+                <article class="glass-panel glass-panel-hover p-6 rounded-2xl border border-purple-500/20 flex flex-col justify-between group">
+                    <div>
+                        <div class="flex items-center justify-between gap-2 mb-3">
+                            <span class="px-2.5 py-1 rounded-lg text-xs font-bold bg-slate-800 text-purple-300 border border-slate-700 uppercase tracking-wider">
+                                Medio de Prensa
+                            </span>
+                            <time class="text-xs text-slate-400 font-medium">2023</time>
+                        </div>
+                        <h3 class="text-base sm:text-lg font-bold text-white group-hover:text-purple-300 transition-colors leading-snug mb-4">
+                            Ganadores del BIME Pro
+                        </h3>
+                    </div>
+                    <div class="pt-2 border-t border-purple-900/40 flex items-center justify-between">
+                        <span class="text-xs text-slate-400">Artículo de Opinión</span>
+                        <a href="https://lnkd.in/p/eYEfmVDM" target="_blank" rel="noopener noreferrer" class="text-xs font-bold text-purple-400 hover:text-purple-300 flex items-center gap-1.5 transition-colors">
+                            Leer artículo <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Noticia 3 (Reserva) -->
+                <article class="glass-panel glass-panel-hover p-6 rounded-2xl border border-purple-500/20 flex flex-col justify-between group">
+                    <div>
+                        <div class="flex items-center justify-between gap-2 mb-3">
+                            <span class="px-2.5 py-1 rounded-lg text-xs font-bold bg-slate-800 text-purple-300 border border-slate-700 uppercase tracking-wider">
+                                Medio Sectorial
+                            </span>
+                            <time class="text-xs text-slate-400 font-medium">2023</time>
+                        </div>
+                        <h3 class="text-base sm:text-lg font-bold text-white group-hover:text-purple-300 transition-colors leading-snug mb-4">
+                            Las entradas "infalsificables" 'made in Spain' que seducen al festival Starlite y al innovador Cruïlla de Barcelona
+                        </h3>
+                    </div>
+                    <div class="pt-2 border-t border-purple-900/40 flex items-center justify-between">
+                        <span class="text-xs text-slate-400">Reportaje Especial</span>
+                        <a href="https://www.elespanol.com/invertia/disruptores/ecosistema-startup/startups/20231116/entradas-infalsificables-made-in-spain-seducen-festival-starlite-innovador-cruilla-barcelona/809669115_0.html" target="_blank" rel="noopener noreferrer" class="text-xs font-bold text-purple-400 hover:text-purple-300 flex items-center gap-1.5 transition-colors">
+                            Leer artículo <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Noticia 4 (Reserva) -->
+                <article class="glass-panel glass-panel-hover p-6 rounded-2xl border border-purple-500/20 flex flex-col justify-between group">
+                    <div>
+                        <div class="flex items-center justify-between gap-2 mb-3">
+                            <span class="px-2.5 py-1 rounded-lg text-xs font-bold bg-slate-800 text-purple-300 border border-slate-700 uppercase tracking-wider">
+                                Comunicación Digital
+                            </span>
+                            <time class="text-xs text-slate-400 font-medium">2024</time>
+                        </div>
+                        <h3 class="text-base sm:text-lg font-bold text-white group-hover:text-purple-300 transition-colors leading-snug mb-4">
+                            Tecnología valenciana para impedir la falsificación de entradas
+                        </h3>
+                    </div>
+                    <div class="pt-2 border-t border-purple-900/40 flex items-center justify-between">
+                        <span class="text-xs text-slate-400">Entrevista</span>
+                        <a href="https://www.lasprovincias.es/economia/startups/tecnologia-valenciana-impedir-falsificacion-entradas-20240526163414-nt.html?ref=https%3A%2F%2Fwww.lasprovincias.es%2Feconomia%2Fstartups%2Ftecnologia-valenciana-impedir-falsificacion-entradas-20240526163414-nt.html" target="_blank" rel="noopener noreferrer" class="text-xs font-bold text-purple-400 hover:text-purple-300 flex items-center gap-1.5 transition-colors">
+                            Leer artículo <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+                        </a>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- EXPERIENCE SECTION -->
+    <section id="experience" class="py-12 sm:py-20 px-4 sm:px-6 max-w-7xl mx-auto relative z-10">
+        <div class="text-center max-w-3xl mx-auto mb-10 sm:mb-16">
+            <h2 class="text-xs font-bold uppercase tracking-widest text-purple-400 mb-2">Historial de Impacto</h2>
+            <p class="text-2xl sm:text-4xl font-extrabold text-white tracking-tight">Experiencia Profesional</p>
+            <p class="text-slate-400 mt-2 sm:mt-3 text-sm sm:text-base">Construcción de marcas, escalado de funnels de ventas y gestión de equipos transfronterizos.</p>
+        </div>
+
+        <div class="relative max-w-4xl mx-auto">
+            <div class="absolute left-3 md:left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-purple-600 via-purple-500 to-indigo-500 transform md:-translate-x-1/2"></div>
+
+            <!-- Item 1 (SAGITAZ ACTUALIZADO) -->
+            <div class="relative flex flex-col md:flex-row items-center mb-8 sm:mb-12 group">
+                <div class="flex items-center justify-start w-full mx-auto">
+                    <div class="w-full md:w-1/2 md:pr-10 pl-8 md:pl-0">
+                        <div class="glass-panel glass-panel-hover p-5 sm:p-6 rounded-2xl border border-purple-500/40">
+                            <div class="flex flex-wrap items-center justify-between gap-2 mb-2">
+                                <span class="px-2.5 py-0.5 rounded-full text-[11px] font-semibold bg-purple-500/20 text-purple-300 border border-purple-500/30">Abril 2025 – Octubre 2026</span>
+                                <span class="text-xs text-slate-400"><i class="fa-solid fa-earth-americas mr-1"></i> España & México</span>
+                            </div>
+                            <h3 class="text-lg sm:text-xl font-bold text-white group-hover:text-purple-400 transition-colors">Marketing Manager</h3>
+                            <p class="text-xs sm:text-sm font-medium text-purple-300 mb-3">Sagitaz</p>
+                            <ul class="text-slate-300 text-xs sm:text-sm leading-relaxed space-y-1.5 mb-4 list-disc list-inside">
+                                <li>Optimicé la comunicación directa con partners y clientes para dinamizar el proceso comercial.</li>
+                                <li>Lideré la gestión y cualificación del pipeline de ventas junto a un equipo transfronterizo de <strong class="text-white">6 personas</strong> (4 marketing + 2 ventas).</li>
+                                <li>Dirigí la localización de campañas GTM en 3 regiones garantizando consistencia de marca.</li>
+                            </ul>
+                            <div class="flex flex-wrap gap-1.5">
+                                <span class="text-[11px] px-2.5 py-1 rounded-md bg-purple-950/50 border border-purple-800/40 text-slate-300">GTM Strategy</span>
+                                <span class="text-[11px] px-2.5 py-1 rounded-md bg-purple-950/50 border border-purple-800/40 text-slate-300">Partner & Client Communication</span>
+                                <span class="text-[11px] px-2.5 py-1 rounded-md bg-purple-950/50 border border-purple-800/40 text-slate-300">Pipeline Management</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="absolute left-3 md:left-1/2 transform -translate-x-1/2 w-6 h-6 sm:w-8 sm:h-8 rounded-full bg-slate-950 border-2 border-purple-500 flex items-center justify-center text-purple-400 shadow-lg shadow-purple-500/50">
+                    <i class="fa-solid fa-chart-line text-[10px] sm:text-xs"></i>
+                </div>
+            </div>
+
+            <!-- Item 2 -->
+            <div class="relative flex flex-col md:flex-row items-center mb-8 sm:mb-12 group">
+                <div class="flex items-center justify-end w-full mx-auto">
+                    <div class="w-full md:w-1/2 md:pl-10 pl-8 md:pl-0">
+                        <div class="glass-panel glass-panel-hover p-5 sm:p-6 rounded-2xl border border-purple-500/40">
+                            <div class="flex flex-wrap items-center justify-between gap-2 mb-2">
+                                <span class="px-2.5 py-0.5 rounded-full text-[11px] font-semibold bg-purple-500/20 text-purple-300 border border-purple-500/30">Enero 2022 – Enero 2025</span>
+                                <span class="text-xs text-slate-400"><i class="fa-solid fa-rocket mr-1"></i> Startup Founder</span>
+                            </div>
+                            <h3 class="text-lg sm:text-xl font-bold text-white group-hover:text-purple-300 transition-colors">Marketing Manager & Co-Founder</h3>
+                            <p class="text-xs sm:text-sm font-medium text-purple-300 mb-3">Oratrex</p>
+                            <ul class="text-slate-300 text-xs sm:text-sm leading-relaxed space-y-1.5 mb-4 list-disc list-inside">
+                                <li>Construí la identidad de marca, tono de voz y messaging framework desde cero (<strong class="text-white">0 → 1</strong>).</li>
+                                <li>Escalé el equipo a <strong class="text-white">15 personas</strong> y contribuí al cierre de una ronda de financiación de <strong class="text-purple-300">~€1M</strong>.</li>
+                                <li>Iteré el mensaje principal duplicando (<strong class="text-emerald-400">+100%</strong>) la tasa de conversión.</li>
+                            </ul>
+                            <div class="flex flex-wrap gap-1.5">
+                                <span class="text-[11px] px-2.5 py-1 rounded-md bg-purple-950/50 border border-purple-800/40 text-slate-300">Brand 0 to 1</span>
+                                <span class="text-[11px] px-2.5 py-1 rounded-md bg-purple-950/50 border border-purple-800/40 text-slate-300">Fundraising</span>
+                                <span class="text-[11px] px-2.5 py-1 rounded-md bg-purple-950/50 border border-purple-800/40 text-slate-300">Conversion Rate (+100%)</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="absolute left-3 md:left-1/2 transform -translate-x-1/2 w-6 h-6 sm:w-8 sm:h-8 rounded-full bg-slate-950 border-2 border-purple-500 flex items-center justify-center text-purple-400 shadow-lg shadow-purple-500/50">
+                    <i class="fa-solid fa-gem text-[10px] sm:text-xs"></i>
+                </div>
+            </div>
+
+            <!-- Item 3 -->
+            <div class="relative flex flex-col md:flex-row items-center mb-8 sm:mb-12 group">
+                <div class="flex items-center justify-start w-full mx-auto">
+                    <div class="w-full md:w-1/2 md:pr-10 pl-8 md:pl-0">
+                        <div class="glass-panel glass-panel-hover p-5 sm:p-6 rounded-2xl border border-purple-500/30">
+                            <div class="flex flex-wrap items-center justify-between gap-2 mb-2">
+                                <span class="px-2.5 py-0.5 rounded-full text-[11px] font-semibold bg-purple-500/20 text-purple-300 border border-purple-500/30">Enero 2021 – Enero 2022</span>
+                                <span class="text-xs text-slate-400"><i class="fa-solid fa-briefcase mr-1"></i> Agencia</span>
+                            </div>
+                            <h3 class="text-lg sm:text-xl font-bold text-white group-hover:text-purple-300 transition-colors">Marketing Project Manager</h3>
+                            <p class="text-xs sm:text-sm font-medium text-purple-300 mb-3">Agencia Trébol Digital</p>
+                            <ul class="text-slate-300 text-xs sm:text-sm leading-relaxed space-y-1.5 mb-4 list-disc list-inside">
+                                <li>Gestión integral de estrategia de Email Marketing para una cuenta con <strong class="text-white">1.5M+ seguidores en LinkedIn</strong>.</li>
+                                <li>Definición de audiencias, customer journeys, test A/B y automatización de funnels.</li>
+                            </ul>
+                            <div class="flex flex-wrap gap-1.5">
+                                <span class="text-[11px] px-2.5 py-1 rounded-md bg-purple-950/50 border border-purple-800/40 text-slate-300">Email Marketing</span>
+                                <span class="text-[11px] px-2.5 py-1 rounded-md bg-purple-950/50 border border-purple-800/40 text-slate-300">Lifecycle Automation</span>
+                                <span class="text-[11px] px-2.5 py-1 rounded-md bg-purple-950/50 border border-purple-800/40 text-slate-300">A/B Testing</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="absolute left-3 md:left-1/2 transform -translate-x-1/2 w-6 h-6 sm:w-8 sm:h-8 rounded-full bg-slate-950 border-2 border-purple-500 flex items-center justify-center text-purple-400 shadow-lg shadow-purple-500/50">
+                    <i class="fa-solid fa-envelope-open-text text-[10px] sm:text-xs"></i>
+                </div>
+            </div>
+
+            <!-- Item 4 -->
+            <div class="relative flex flex-col md:flex-row items-center mb-8 sm:mb-12 group">
+                <div class="flex items-center justify-end w-full mx-auto">
+                    <div class="w-full md:w-1/2 md:pl-10 pl-8 md:pl-0">
+                        <div class="glass-panel glass-panel-hover p-5 sm:p-6 rounded-2xl border border-purple-500/30">
+                            <div class="flex flex-wrap items-center justify-between gap-2 mb-2">
+                                <span class="px-2.5 py-0.5 rounded-full text-[11px] font-semibold bg-purple-500/20 text-purple-300 border border-purple-500/30">Mayo 2019 – Diciembre 2020</span>
+                                <span class="text-xs text-slate-400"><i class="fa-solid fa-globe mr-1"></i> Expansión LATAM</span>
+                            </div>
+                            <h3 class="text-lg sm:text-xl font-bold text-white group-hover:text-purple-300 transition-colors">Marketing Specialist</h3>
+                            <p class="text-xs sm:text-sm font-medium text-purple-300 mb-3">Pixel Studios Web Solutions</p>
+                            <ul class="text-slate-300 text-xs sm:text-sm leading-relaxed space-y-1.5 mb-4 list-disc list-inside">
+                                <li>Lideré la adaptación GTM de contenido digital para la expansión en LATAM.</li>
+                                <li>Coordinación de lanzamientos de campañas escalables y contenido de producto.</li>
+                            </ul>
+                            <div class="flex flex-wrap gap-1.5">
+                                <span class="text-[11px] px-2.5 py-1 rounded-md bg-purple-950/50 border border-purple-800/40 text-slate-300">LATAM Expansion</span>
+                                <span class="text-[11px] px-2.5 py-1 rounded-md bg-purple-950/50 border border-purple-800/40 text-slate-300">Digital Content</span>
+                                <span class="text-[11px] px-2.5 py-1 rounded-md bg-purple-950/50 border border-purple-800/40 text-slate-300">International Teams</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="absolute left-3 md:left-1/2 transform -translate-x-1/2 w-6 h-6 sm:w-8 sm:h-8 rounded-full bg-slate-950 border-2 border-purple-500 flex items-center justify-center text-purple-400 shadow-lg shadow-purple-500/50">
+                    <i class="fa-solid fa-bullhorn text-[10px] sm:text-xs"></i>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- SKILLS SECTION -->
+    <section id="skills" class="py-12 sm:py-20 px-4 sm:px-6 max-w-7xl mx-auto relative z-10">
+        <div class="text-center max-w-3xl mx-auto mb-10 sm:mb-16">
+            <h2 class="text-xs font-bold uppercase tracking-widest text-purple-400 mb-2">Ecosistema & Herramientas</h2>
+            <p class="text-2xl sm:text-4xl font-extrabold text-white tracking-tight">Skills & IA Integrada</p>
+            <p class="text-slate-400 mt-2 sm:mt-3 text-sm sm:text-base">Combinación de estrategia de marca, automatización de procesos y analítica avanzada.</p>
+        </div>
+
+        <div class="flex justify-center gap-2 mb-8 flex-wrap">
+            <button onclick="switchSkillTab('ai')" id="tab-ai" class="skill-tab-btn px-4 sm:px-5 py-2.5 rounded-xl font-medium text-xs sm:text-sm transition-all bg-purple-600 text-white shadow-lg shadow-purple-600/30 flex-1 sm:flex-none">
+                <i class="fa-solid fa-robot mr-1.5"></i>AI & Automation
+            </button>
+            <button onclick="switchSkillTab('crm')" id="tab-crm" class="skill-tab-btn px-4 sm:px-5 py-2.5 rounded-xl font-medium text-xs sm:text-sm transition-all glass-panel text-slate-400 hover:text-white flex-1 sm:flex-none">
+                <i class="fa-solid fa-users-gear mr-1.5"></i>CRM & Lifecycle
+            </button>
+            <button onclick="switchSkillTab('analytics')" id="tab-analytics" class="skill-tab-btn px-4 sm:px-5 py-2.5 rounded-xl font-medium text-xs sm:text-sm transition-all glass-panel text-slate-400 hover:text-white flex-1 sm:flex-none">
+                <i class="fa-solid fa-chart-pie mr-1.5"></i>Data & Management
+            </button>
+        </div>
+
+        <div class="glass-panel p-5 sm:p-10 rounded-3xl border border-purple-500/30">
+            <div id="skills-ai" class="skill-content grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
+                <div class="space-y-3">
+                    <h4 class="font-bold text-base sm:text-lg text-purple-300 flex items-center gap-2">
+                        <i class="fa-solid fa-brain"></i> Automatización e Inteligencia Artificial
+                    </h4>
+                    <p class="text-slate-400 text-xs sm:text-sm">
+                        Incorporación activa de LLMs y automatización de flujos para reporting, segmentación de clientes y análisis operativo.
+                    </p>
+                    <div class="flex flex-wrap gap-2 pt-2">
+                        <span class="px-3 py-1.5 rounded-xl bg-purple-950/60 border border-purple-800/60 text-purple-200 text-xs font-semibold flex items-center gap-1.5">
+                            <i class="fa-solid fa-bolt text-amber-400"></i> Zia (Analytics AI)
+                        </span>
+                        <span class="px-3 py-1.5 rounded-xl bg-purple-950/60 border border-purple-800/60 text-purple-200 text-xs font-semibold flex items-center gap-1.5">
+                            <i class="fa-solid fa-microchip text-cyan-400"></i> Agentes IA (en desarrollo)
+                        </span>
+                        <span class="px-3 py-1.5 rounded-xl bg-purple-950/60 border border-purple-800/60 text-purple-200 text-xs font-semibold flex items-center gap-1.5">
+                            <i class="fa-solid fa-message text-indigo-400"></i> Gemini & ChatGPT
+                        </span>
+                        <span class="px-3 py-1.5 rounded-xl bg-purple-950/60 border border-purple-800/60 text-purple-200 text-xs font-semibold flex items-center gap-1.5">
+                            <i class="fa-solid fa-wand-magic-sparkles text-pink-400"></i> Midjourney
+                        </span>
+                        <span class="px-3 py-1.5 rounded-xl bg-purple-950/60 border border-purple-800/60 text-purple-200 text-xs font-semibold flex items-center gap-1.5">
+                            <i class="fa-solid fa-network-wired text-emerald-400"></i> n8n & Zapier
+                        </span>
+                    </div>
+                </div>
+
+                <div class="space-y-3">
+                    <h4 class="font-bold text-base sm:text-lg text-purple-300 flex items-center gap-2">
+                        <i class="fa-solid fa-pen-nib"></i> Diseño & Brand Storytelling
+                    </h4>
+                    <p class="text-slate-400 text-xs sm:text-sm">
+                        Creación de frameworks de mensaje, sistemas de diseño de marca e identidad visual accesible.
+                    </p>
+                    <div class="flex flex-wrap gap-2 pt-2">
+                        <span class="px-3 py-1.5 rounded-xl bg-purple-950/40 border border-purple-800/40 text-slate-200 text-xs font-semibold">Figma</span>
+                        <span class="px-3 py-1.5 rounded-xl bg-purple-950/40 border border-purple-800/40 text-slate-200 text-xs font-semibold">Canva</span>
+                        <span class="px-3 py-1.5 rounded-xl bg-purple-950/40 border border-purple-800/40 text-slate-200 text-xs font-semibold">Adobe Creative Cloud</span>
+                    </div>
+                </div>
+            </div>
+
+            <div id="skills-crm" class="skill-content hidden grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
+                <div class="space-y-3">
+                    <h4 class="font-bold text-base sm:text-lg text-purple-300 flex items-center gap-2">
+                        <i class="fa-solid fa-database"></i> CRM & Customer Lifecycle
+                    </h4>
+                    <p class="text-slate-400 text-xs sm:text-sm">
+                        Estructuración de procesos comerciales, MQL a SQL y flujos de nutrición automatizados.
+                    </p>
+                    <div class="flex flex-wrap gap-2 pt-2">
+                        <span class="px-3 py-1.5 rounded-xl bg-purple-950/60 border border-purple-800/60 text-purple-200 text-xs font-semibold">Zoho CRM</span>
+                        <span class="px-3 py-1.5 rounded-xl bg-purple-950/60 border border-purple-800/60 text-purple-200 text-xs font-semibold">HubSpot</span>
+                        <span class="px-3 py-1.5 rounded-xl bg-purple-950/60 border border-purple-800/60 text-purple-200 text-xs font-semibold">Pipedrive</span>
+                    </div>
+                </div>
+
+                <div class="space-y-3">
+                    <h4 class="font-bold text-base sm:text-lg text-purple-300 flex items-center gap-2">
+                        <i class="fa-solid fa-paper-plane"></i> Email Marketing Automation
+                    </h4>
+                    <p class="text-slate-400 text-xs sm:text-sm">
+                        Diseño de customer journeys complejos, segmentación avanzada y tests A/B.
+                    </p>
+                    <div class="flex flex-wrap gap-2 pt-2">
+                        <span class="px-3 py-1.5 rounded-xl bg-purple-950/60 border border-purple-800/60 text-purple-200 text-xs font-semibold">ActiveCampaign</span>
+                        <span class="px-3 py-1.5 rounded-xl bg-purple-950/60 border border-purple-800/60 text-purple-200 text-xs font-semibold">Brevo</span>
+                        <span class="px-3 py-1.5 rounded-xl bg-purple-950/60 border border-purple-800/60 text-purple-200 text-xs font-semibold">Mailchimp</span>
+                    </div>
+                </div>
+            </div>
+
+            <div id="skills-analytics" class="skill-content hidden grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
+                <div class="space-y-3">
+                    <h4 class="font-bold text-base sm:text-lg text-purple-300 flex items-center gap-2">
+                        <i class="fa-solid fa-chart-simple"></i> Data & Business Intelligence
+                    </h4>
+                    <p class="text-slate-400 text-xs sm:text-sm">
+                        Visualización de datos e informes ejecutivos para toma de decisiones orientadas a crecimiento.
+                    </p>
+                    <div class="flex flex-wrap gap-2 pt-2">
+                        <span class="px-3 py-1.5 rounded-xl bg-purple-950/60 border border-purple-800/60 text-purple-200 text-xs font-semibold">Tableau</span>
+                        <span class="px-3 py-1.5 rounded-xl bg-purple-950/60 border border-purple-800/60 text-purple-200 text-xs font-semibold">Power BI</span>
+                        <span class="px-3 py-1.5 rounded-xl bg-purple-950/60 border border-purple-800/60 text-purple-200 text-xs font-semibold">Google Analytics 4 (GA4)</span>
+                    </div>
+                </div>
+
+                <div class="space-y-3">
+                    <h4 class="font-bold text-base sm:text-lg text-purple-300 flex items-center gap-2">
+                        <i class="fa-solid fa-list-check"></i> Project Management & Soft Skills
+                    </h4>
+                    <p class="text-slate-400 text-xs sm:text-sm">
+                        Gestión ágil de proyectos y liderazgo comunicativo para equipos multidisciplinares.
+                    </p>
+                    <div class="flex flex-wrap gap-2 pt-2">
+                        <span class="px-3 py-1.5 rounded-xl bg-purple-950/60 border border-purple-800/60 text-purple-200 text-xs font-semibold">ClickUp</span>
+                        <span class="px-3 py-1.5 rounded-xl bg-purple-950/60 border border-purple-800/60 text-purple-200 text-xs font-semibold">Trello</span>
+                        <span class="px-3 py-1.5 rounded-xl bg-purple-950/60 border border-purple-800/60 text-purple-200 text-xs font-semibold">Zoho Projects</span>
+                        <span class="px-3 py-1.5 rounded-xl bg-purple-950/60 border border-purple-800/60 text-purple-200 text-xs font-semibold">Liderazgo & Oratoria</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- EDUCATION & LANGUAGES -->
+    <section id="education" class="py-12 sm:py-20 px-4 sm:px-6 max-w-7xl mx-auto relative z-10">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
+            <div class="space-y-6">
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-xl bg-purple-500/20 text-purple-400 flex items-center justify-center text-xl">
+                        <i class="fa-solid fa-graduation-cap"></i>
+                    </div>
+                    <h3 class="text-xl sm:text-2xl font-bold text-white">Formación Académica</h3>
+                </div>
+
+                <div class="space-y-4">
+                    <div class="glass-panel p-5 sm:p-6 rounded-2xl border border-purple-500/20">
+                        <span class="text-xs font-semibold text-purple-400">2021</span>
+                        <h4 class="text-base sm:text-lg font-bold text-white mt-1">Master en Big Data y Marketing</h4>
+                        <p class="text-xs sm:text-sm text-slate-400">ISEB (Instituto Superior de Economía y Empresa)</p>
+                    </div>
+
+                    <div class="glass-panel p-5 sm:p-6 rounded-2xl border border-purple-500/20">
+                        <span class="text-xs font-semibold text-purple-400">2022</span>
+                        <h4 class="text-base sm:text-lg font-bold text-white mt-1">Curso Especializado en Data Visualization</h4>
+                        <p class="text-xs sm:text-sm text-slate-400">EDEM Escuela de Empresarios</p>
+                    </div>
+
+                    <div class="glass-panel p-5 sm:p-6 rounded-2xl border border-purple-500/20">
+                        <span class="text-xs font-semibold text-purple-400">2015 – 2020</span>
+                        <h4 class="text-base sm:text-lg font-bold text-white mt-1">Grado en Turismo y Administración de Empresas</h4>
+                        <p class="text-xs sm:text-sm text-slate-400">Universidad de Valencia (UV)</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="space-y-8">
+                <div class="space-y-6">
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-xl bg-purple-500/20 text-purple-400 flex items-center justify-center text-xl">
+                            <i class="fa-solid fa-language"></i>
+                        </div>
+                        <h3 class="text-xl sm:text-2xl font-bold text-white">Idiomas</h3>
+                    </div>
+
+                    <div class="grid grid-cols-3 gap-3">
+                        <div class="glass-panel p-3.5 sm:p-4 rounded-2xl text-center border border-purple-500/20">
+                            <p class="text-[11px] text-slate-400">Español</p>
+                            <p class="text-xs sm:text-base font-bold text-white mt-1">Nativo</p>
+                        </div>
+                        <div class="glass-panel p-3.5 sm:p-4 rounded-2xl text-center border border-purple-500/40">
+                            <p class="text-[11px] text-slate-400">Inglés</p>
+                            <p class="text-xs sm:text-base font-bold text-purple-300 mt-1">Profesional</p>
+                        </div>
+                        <div class="glass-panel p-3.5 sm:p-4 rounded-2xl text-center border border-purple-500/20">
+                            <p class="text-[11px] text-slate-400">Francés</p>
+                            <p class="text-xs sm:text-base font-bold text-white mt-1">Básico</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="space-y-6">
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-xl bg-purple-500/20 text-purple-400 flex items-center justify-center text-xl">
+                            <i class="fa-solid fa-heart"></i>
+                        </div>
+                        <h3 class="text-xl sm:text-2xl font-bold text-white">Voluntariado</h3>
+                    </div>
+
+                    <div class="glass-panel p-5 sm:p-6 rounded-2xl border border-purple-500/20">
+                        <div class="flex justify-between items-center mb-1">
+                            <h4 class="text-sm sm:text-base font-bold text-white">Voluntaria en Tienda</h4>
+                            <span class="text-xs text-slate-400">2014 – 2016</span>
+                        </div>
+                        <p class="text-xs sm:text-sm text-purple-300 font-medium">Oxfam Intermón</p>
+                        <p class="text-xs text-slate-400 mt-2">Colaboración activa en comercio justo e iniciativas solidarias comunitarias.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section id="contact" class="py-12 sm:py-20 px-4 sm:px-6 max-w-7xl mx-auto relative z-10">
+        <div class="glass-panel p-6 sm:p-12 lg:p-14 rounded-3xl border border-purple-500/40 relative">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+                
+                <div class="lg:col-span-5 space-y-5">
+                    <h2 class="text-xs font-bold uppercase tracking-widest text-purple-400">Conectemos</h2>
+                    <p class="text-2xl sm:text-4xl font-extrabold text-white leading-tight">¿Hablamos de tu próximo paso de crecimiento?</p>
+                    <p class="text-slate-400 text-xs sm:text-sm leading-relaxed">
+                        Abierta a oportunidades de liderazgo de marca, estrategia GTM y escalado de negocio en proyectos globales o locales.
+                    </p>
+
+                    <div class="space-y-3.5 pt-2">
+                        <div class="flex items-center gap-3.5">
+                            <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-2xl glass-panel flex items-center justify-center text-purple-400 text-lg">
+                                <i class="fa-solid fa-envelope"></i>
+                            </div>
+                            <div>
+                                <p class="text-[11px] text-slate-400">Email Directo</p>
+                                <a href="mailto:patricia.panyos@gmail.com" class="text-xs sm:text-sm text-white font-semibold hover:text-purple-400 transition-colors">patricia.panyos@gmail.com</a>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center gap-3.5">
+                            <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-2xl glass-panel flex items-center justify-center text-purple-400 text-lg">
+                                <i class="fa-solid fa-phone"></i>
+                            </div>
+                            <div>
+                                <p class="text-[11px] text-slate-400">Teléfono</p>
+                                <a href="tel:+34648774293" class="text-xs sm:text-sm text-white font-semibold hover:text-purple-300 transition-colors">(+34) 648 774 293</a>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center gap-3.5">
+                            <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-2xl glass-panel flex items-center justify-center text-purple-400 text-lg">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
+                            <div>
+                                <p class="text-[11px] text-slate-400">Ubicación</p>
+                                <p class="text-xs sm:text-sm text-white font-semibold">España</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-7">
+                    <form action="https://formspree.io/f/moejjjrr" method="POST" class="space-y-3.5">
+                        <input type="hidden" name="_subject" value="Nuevo contacto desde la Web (ES) - Patricia Paños">
+
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
+                            <div>
+                                <label class="block text-[11px] font-semibold text-slate-300 uppercase tracking-wider mb-1.5">Tu Nombre</label>
+                                <input type="text" name="name" required placeholder="Nombre completo" class="w-full px-4 py-3 rounded-xl bg-slate-900/80 border border-purple-900/50 text-white placeholder-slate-500 focus:outline-none focus:border-purple-500 focus:ring-1 focus:ring-purple-500 transition-all text-xs sm:text-sm">
+                            </div>
+                            <div>
+                                <label class="block text-[11px] font-semibold text-slate-300 uppercase tracking-wider mb-1.5">Tu Email</label>
+                                <input type="email" name="email" required placeholder="tu@empresa.com" class="w-full px-4 py-3 rounded-xl bg-slate-900/80 border border-purple-900/50 text-white placeholder-slate-500 focus:outline-none focus:border-purple-500 focus:ring-1 focus:ring-purple-500 transition-all text-xs sm:text-sm">
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-[11px] font-semibold text-slate-300 uppercase tracking-wider mb-1.5">Asunto</label>
+                            <input type="text" name="subject" required placeholder="Propuesta de proyecto / Selección" class="w-full px-4 py-3 rounded-xl bg-slate-900/80 border border-purple-900/50 text-white placeholder-slate-500 focus:outline-none focus:border-purple-500 focus:ring-1 focus:ring-purple-500 transition-all text-xs sm:text-sm">
+                        </div>
+
+                        <div>
+                            <label class="block text-[11px] font-semibold text-slate-300 uppercase tracking-wider mb-1.5">Mensaje</label>
+                            <textarea name="message" required rows="4" placeholder="Escribe tu mensaje o propuesta..." class="w-full px-4 py-3 rounded-xl bg-slate-900/80 border border-purple-900/50 text-white placeholder-slate-500 focus:outline-none focus:border-purple-500 focus:ring-1 focus:ring-purple-500 transition-all text-xs sm:text-sm resize-none"></textarea>
+                        </div>
+
+                        <button type="submit" class="w-full py-3.5 rounded-xl font-bold text-xs sm:text-sm text-white bg-gradient-to-r from-purple-700 via-purple-600 to-indigo-600 hover:opacity-90 shadow-xl shadow-purple-600/30 transition-all flex items-center justify-center gap-2">
+                            <span>Enviar Mensaje</span>
+                            <i class="fa-solid fa-paper-plane text-xs"></i>
+                        </button>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="py-8 px-4 border-t border-purple-900/30 text-center relative z-10">
+        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-slate-500">
+            <p>© 2026 Patricia Paños. Referencias disponibles a petición.</p>
+            <div>
+                <a href="#about" class="hover:text-purple-400 transition-colors">Volver Arriba ↑</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- TOAST NOTIFICATION -->
+    <div id="toastNotification" class="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 glass-panel border border-purple-500/60 p-3.5 sm:p-4 rounded-2xl shadow-2xl flex items-center gap-3.5 transition-all duration-300 transform translate-y-32 opacity-0 z-50 max-w-[90vw]">
+        <div class="w-8 h-8 sm:w-10 sm:h-10 rounded-xl bg-purple-500/20 text-purple-400 flex items-center justify-center text-lg shrink-0">
+            <i class="fa-solid fa-circle-check"></i>
+        </div>
+        <div>
+            <h4 id="toastTitle" class="text-xs sm:text-sm font-bold text-white">¡Acción realizada!</h4>
+            <p id="toastSub" class="text-[11px] sm:text-xs text-slate-400">Procesado correctamente.</p>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const typingText = document.getElementById('typing-text');
+            const phrases = [
+                'Brand Building 0→1 & Scale',
+                'Growth & Lifecycle Marketing',
+                'Sistemas CRM & Automatización',
+                'IA en Reporte & Analítica'
+            ];
+            let phraseIndex = 0;
+            let charIndex = 0;
+            let isDeleting = false;
+
+            function typeEffect() {
+                if (!typingText) return;
+                const currentPhrase = phrases[phraseIndex];
+                
+                if (isDeleting) {
+                    typingText.textContent = currentPhrase.substring(0, charIndex - 1);
+                    charIndex--;
+                } else {
+                    typingText.textContent = currentPhrase.substring(0, charIndex + 1);
+                    charIndex++;
+                }
+
+                let typeSpeed = isDeleting ? 30 : 70;
+
+                if (!isDeleting && charIndex === currentPhrase.length) {
+                    typeSpeed = 2000;
+                    isDeleting = true;
+                } else if (isDeleting && charIndex === 0) {
+                    isDeleting = false;
+                    phraseIndex = (phraseIndex + 1) % phrases.length;
+                    typeSpeed = 300;
+                }
+
+                setTimeout(typeEffect, typeSpeed);
+            }
+
+            typeEffect();
+
+            // Carrusel de imágenes del hero
+            const slides = Array.from(document.querySelectorAll('.hero-slide'));
+            const dots = Array.from(document.querySelectorAll('.hero-dot'));
+            const prevBtn = document.getElementById('heroPrev');
+            const nextBtn = document.getElementById('heroNext');
+            let currentSlide = 0;
+            let carouselTimer;
+
+            function showSlide(index) {
+                if (!slides.length) return;
+                currentSlide = (index + slides.length) % slides.length;
+                slides.forEach((slide, i) => {
+                    slide.classList.toggle('opacity-100', i === currentSlide);
+                    slide.classList.toggle('opacity-0', i !== currentSlide);
+                });
+                dots.forEach((dot, i) => {
+                    dot.classList.toggle('bg-white', i === currentSlide);
+                    dot.classList.toggle('bg-white/40', i !== currentSlide);
+                    dot.setAttribute('aria-current', i === currentSlide ? 'true' : 'false');
+                });
+            }
+
+            function restartCarousel() {
+                clearInterval(carouselTimer);
+                carouselTimer = setInterval(() => showSlide(currentSlide + 1), 5000);
+            }
+
+            if (slides.length) {
+                prevBtn?.addEventListener('click', () => { showSlide(currentSlide - 1); restartCarousel(); });
+                nextBtn?.addEventListener('click', () => { showSlide(currentSlide + 1); restartCarousel(); });
+                dots.forEach((dot, i) => dot.addEventListener('click', () => { showSlide(i); restartCarousel(); }));
+                showSlide(0);
+                restartCarousel();
+            }
+        });
+
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        if (mobileMenuBtn) {
+            mobileMenuBtn.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+        }
+
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        function switchSkillTab(category) {
+            document.querySelectorAll('.skill-content').forEach(content => {
+                content.classList.add('hidden');
+            });
+
+            document.querySelectorAll('.skill-tab-btn').forEach(btn => {
+                btn.className = 'skill-tab-btn px-4 sm:px-5 py-2.5 rounded-xl font-medium text-xs sm:text-sm transition-all glass-panel text-slate-400 hover:text-white flex-1 sm:flex-none';
+            });
+
+            document.getElementById(`skills-${category}`).classList.remove('hidden');
+
+            const activeBtn = document.getElementById(`tab-${category}`);
+            activeBtn.className = 'skill-tab-btn px-4 sm:px-5 py-2.5 rounded-xl font-medium text-xs sm:text-sm transition-all bg-purple-600 text-white shadow-lg shadow-purple-600/30 flex-1 sm:flex-none';
+        }
+
+        function copyContactInfo() {
+            const contactText = "Patricia Paños | patricia.panyos@gmail.com | (+34) 648 774 293";
+            
+            if (navigator.clipboard && window.isSecureContext) {
+                navigator.clipboard.writeText(contactText).then(() => {
+                    showToast("Datos Copiados", "Se han copiado los datos de contacto.");
+                });
+            } else {
+                const textArea = document.createElement('textarea');
+                textArea.value = contactText;
+                document.body.appendChild(textArea);
+                textArea.select();
+                document.execCommand('copy');
+                document.body.removeChild(textArea);
+                showToast("Datos Copiados", "Se han copiado los datos de contacto.");
+            }
+        }
+
+        function showToast(title, message) {
+            const toast = document.getElementById('toastNotification');
+            document.getElementById('toastTitle').innerText = title;
+            document.getElementById('toastSub').innerText = message;
+
+            toast.classList.remove('translate-y-32', 'opacity-0');
+            toast.classList.add('translate-y-0', 'opacity-100');
+
+            setTimeout(() => {
+                toast.classList.remove('translate-y-0', 'opacity-100');
+                toast.classList.add('translate-y-32', 'opacity-0');
+            }, 3500);
+        }
+    </script>
+</body>
+</html>
